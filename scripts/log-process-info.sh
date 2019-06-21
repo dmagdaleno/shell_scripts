@@ -15,3 +15,10 @@ do
 	date_time=$(date +%F,%H:%M:%S)
 	echo $date_time,$p_size_mb MB >> logs/$p_name.log
 done
+
+if [ $? -eq 0 ]
+then
+	echo 'All processes successfully logged'
+else
+	echo 'Error logging processes'
+fi
