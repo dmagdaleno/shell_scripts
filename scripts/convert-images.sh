@@ -22,3 +22,9 @@ fi
 
 convert_images $@ 2> logs/errors.log
 
+if [ $? -eq 0 ]
+then
+	echo 'All files successfully converted'
+else
+	echo 'Error converting files'
+fi
