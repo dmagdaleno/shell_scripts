@@ -15,4 +15,10 @@ convert_images(){
 	done
 }
 
-convert_images $@
+if [ ! -d logs ]
+then
+        mkdir logs
+fi
+
+convert_images $@ 2> logs/errors.log
+
