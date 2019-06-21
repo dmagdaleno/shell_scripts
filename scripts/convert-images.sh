@@ -2,13 +2,13 @@
 
 cd ~/work/shell_scripts/images
 
-if [ ! -d png ]
+if [ ! -d $2 ]
 then
-	mkdir png
+	mkdir $2
 fi
 
-for file in *.jpg
+for file in *.$1
 do
 	file_name=$(ls $file | awk -F. '{ print $1 }')
-	convert $file png/$file_name.png
+	convert $file $2/$file_name.$2
 done
