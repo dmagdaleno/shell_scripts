@@ -1,8 +1,14 @@
 #!/bin/bash
 
-IMAGE_PATH=~/work/shell_scripts/images
+cd ~/work/shell_scripts/images
 
-for image in $@
+if [ ! -d png ]
+then
+	mkdir png
+fi
+
+for file in *.jpg
 do
-	convert $IMAGE_PATH/$image.jpg $IMAGE_PATH/$image.png
+	file_name=$(ls $file | awk -F. '{ print $1 }')
+	convert $file png/$file_name.png
 done
