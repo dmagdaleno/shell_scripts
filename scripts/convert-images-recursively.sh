@@ -21,3 +21,10 @@ open_folder() {
 }
 
 open_folder ~/work/shell_scripts/images
+
+if [ $? -eq 0 ]
+then
+	echo 'All files successfully converted'
+else
+	echo 'Error converting files'
+fi
